@@ -4,10 +4,6 @@
 <br clear="all"/>
 
 
-| **Name**                    | **ID**   |
-|-----------------------------|----------|
-| Mazen Ashraf Mohamed         | 2200822  |
-| Yasser Mohamed Abdallah      | 2200732  |
 
 
 
