@@ -95,4 +95,10 @@ The program runs in a **single-threaded** loop, with the **real-time clock** bei
   <img src="https://github.com/Mazen-Elborhamy/Embedded-Project-/raw/main/Report%20%26%20Video/Screenshot%202025-05-12%20150740.jpg" alt="Watch the video" width="300"/>
 </a>
 
+<h2>📄 Project Report</h2>
+
+<a href="https://github.com/Mazen-Elborhamy/Embedded-Project-/blob/main/Report%20%26%20Video/Embedded%20Project%20report.pdf" target="_blank">
+  <img src="https://github.com/Mazen-Elborhamy/Embedded-Project-/raw/main/Report%20%26%20Video/Screenshot%202025-05-12%20171725.png" alt="Open Project Report" width="300"/>
+</a>
+
 
