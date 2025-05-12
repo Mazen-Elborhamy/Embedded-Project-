@@ -52,19 +52,34 @@ The program runs in a **single-threaded** loop, with the **real-time clock** bei
 
 ## Build Instructions:
 
-1. **Install Mbed OS**:
-   Ensure you have the **Mbed OS** installed on your machine. You can follow the [official installation guide](https://os.mbed.com/studio/) to set up the necessary tools.
-
-2. **Import the Project**:
-   Clone the repository or download the project files. Open a terminal and navigate to your project directory.
-
-3. **Build the Project**:
-   To build and flash the project onto your **STM32 Nucleo F401RE** board, follow these steps:
-   - Connect your **Nucleo F401RE** board via USB to your computer.
-   - Open a terminal and run the following command to build the project:
-
+### Option 1: Using **Mbed OS**
+1. **Install Mbed OS**  
+   Follow the official guide: [Mbed OS Installation](https://os.mbed.com/studio/)
+2. **Import the Project**  
+   Clone the repository or download the project files.
+3. **Build and Flash**  
+   Connect your **Nucleo F401RE** board via USB, then run the following command:
    ```bash
    mbed compile -m NUCLEO_F401RE -t GCC_ARM --flash
+
+### Option 2: Using **Using Keil MDK**
+1. **Install Keil MDK**  
+   - Download and install Keil MDK from: [Keil MDK](https://www.keil.com/download/)
+2. **Import the Project**  
+   Clone the repository or download the project files- Open Keil uVision.
+- Select Project > Open and browse to your project folder.
+- Import the appropriate .uvprojx file.
+- Compile & Run.
+- Click on Build to compile the program.
+- Connect your Nucleo F401RE via USB.
+- Click Download to flash the program onto the board.
+- Press Run to execute the program.
+3. **Build and Flash**  
+   Connect your **Nucleo F401RE** board via USB, then run the following command:
+   ```bash
+   mbed compile -m NUCLEO_F401RE -t GCC_ARM --flash
+
+## Project Resources
 
 <h2>📹 Project Video </h2>
 
