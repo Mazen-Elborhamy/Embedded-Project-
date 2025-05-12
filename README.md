@@ -3,10 +3,20 @@
 </p>
 <br clear="all"/>
 
-<div style="text-align: center;">
-  <p>Mazen Ashraf Mohamed<br>2200822</p>
-  <p>Yasser Mohamed Abdallah<br>2200732</p>
-</div>
+<table style="width: 100%; text-align: center; border: 1px solid black;">
+  <tr>
+    <th>Name</th>
+    <th>ID</th>
+  </tr>
+  <tr>
+    <td>Mazen Ashraf Mohamed</td>
+    <td>2200822</td>
+  </tr>
+  <tr>
+    <td>Yasser Mohamed Abdallah</td>
+    <td>2200732</td>
+  </tr>
+</table>
 
 
 # Embedded Project: Real-Time Clock and Voltage Display
