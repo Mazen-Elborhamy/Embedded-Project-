@@ -89,7 +89,10 @@ The program runs in a **single-threaded** loop, with the **real-time clock** bei
    ```bash
    mbed compile -m NUCLEO_F401RE -t GCC_ARM --flash
 
-## 📹 Project Video
+<h2>📹 Project Video </h2>
 
-[![Watch the video](https://github.com/Mazen-Elborhamy/Embedded-Project-/raw/main/Report%20%26%20Video/Screenshot%202025-05-12%20150740.png)](https://github.com/Mazen-Elborhamy/Embedded-Project-/blob/main/Report%20%26%20Video/Project%20Video.mp4)
+<a href="https://drive.google.com/file/d/1s7I7npO2QUiUPna9hscxqAzC01U5uYPd/view?usp=drive_link" target="_blank">
+  <img src="https://github.com/Mazen-Elborhamy/Embedded-Project-/raw/main/Report%20%26%20Video/Screenshot%202025-05-12%20150740.jpg" alt="Watch the video" width="300"/>
+</a>
+
 
