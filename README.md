@@ -1,5 +1,7 @@
-<img src="https://github.com/Mazen-Elborhamy/Embedded-Project-/raw/main/Report%20%26%20Video/download.png" alt="Download Icon" width="200" align="left"/>
-
+<p>
+  <img src="https://github.com/Mazen-Elborhamy/Embedded-Project-/raw/main/Report%20%26%20Video/download.png" alt="Download Icon" width="300" align="left"/>
+</p>
+<br clear="all"/>
 
 
 # Embedded_Project: Real-Time Clock and Voltage Display
