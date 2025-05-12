@@ -1,73 +1,95 @@
-![](./resources/official_armmbed_example_badge.png)
-# Blinky Mbed OS example
 
-The example project is part of the [Arm Mbed OS Official Examples](https://os.mbed.com/code/) and is the [getting started example for Mbed OS](https://os.mbed.com/docs/mbed-os/latest/quick-start/index.html). It contains an application that repeatedly blinks an LED on supported [Mbed boards](https://os.mbed.com/platforms/).
+# Embedded_Project: Real-Time Clock and Voltage Display
 
-You can build the project with all supported [Mbed OS build tools](https://os.mbed.com/docs/mbed-os/latest/tools/index.html). However, this example project specifically refers to the command-line interface tools, [Arm Mbed CLI 1](https://github.com/ARMmbed/mbed-cli#installing-mbed-cli) and [Mbed CLI 2](https://github.com/ARMmbed/mbed-tools#installation).
+This project uses the **STM32 Nucleo F401RE** board along with the **Arduino Multifunction Shield** to display a **real-time clock** (RTC) and **voltage readings** on a **4-digit 7-segment display**. The voltage is read through a **potentiometer** and displayed when the **S3 switch** is pressed. The program continuously counts time in the background.
 
-(Note: To see a rendered example you can import into the Arm Online Compiler, please see our [import quick start](https://os.mbed.com/docs/mbed-os/latest/quick-start/online-with-the-online-compiler.html#importing-the-code).)
+## Features:
+- **Real-Time Clock** displayed on a 4-digit 7-segment display.
+- **Voltage** display from a potentiometer when **S3** is pressed.
+- **Reset** functionality when **S1** is pressed, or when the time reaches 100 minutes.
 
-## Mbed OS build tools
+## Components:
+- **STM32 Nucleo F401RE** board
+- **Arduino Multifunction Shield**
+  - **4-digit 7-segment display**
+  - **Potentiometer**
+  - **3 switches (S1, S2, S3)**
 
-### Mbed CLI 2
-Starting with version 6.5, Mbed OS uses Mbed CLI 2. It uses Ninja as a build system, and CMake to generate the build environment and manage the build process in a compiler-independent manner. If you are working with Mbed OS version prior to 6.5 then check the section [Mbed CLI 1](#mbed-cli-1).
-1. [Install Mbed CLI 2](https://os.mbed.com/docs/mbed-os/latest/build-tools/install-or-upgrade.html).
-1. From the command-line, import the example: `mbed-tools import mbed-os-example-blinky`
-1. Change the current directory to where the project was imported.
+## Pin Setup:
+- **Shift Register Pins** for controlling the 7-segment display:
+  - `DigitalOut serPin(D8)`  - Serial Data
+  - `DigitalOut clkPin(D7)`  - Clock
+  - `DigitalOut latchPin(D4)` - Latch
+- **Inputs:**
+  - `AnalogIn voltagePin(A0)`  - Potentiometer
+  - `DigitalIn s1Switch(A1)`   - Reset
+  - `DigitalIn s3Switch(A3)`   - Show Voltage
 
-### Mbed CLI 1
-1. [Install Mbed CLI 1](https://os.mbed.com/docs/mbed-os/latest/quick-start/offline-with-mbed-cli.html).
-1. From the command-line, import the example: `mbed import mbed-os-example-blinky`
-1. Change the current directory to where the project was imported.
+## Application Functionality:
+The program runs in a **single-threaded** loop, with the **real-time clock** being updated every second. When the **S3 switch** is pressed, it will display the voltage read from the potentiometer. When **S1** is pressed or after **100 minutes**, the timer resets to `00:00`.
 
-## Application functionality
+## Build Instructions:
 
-The `main()` function is the single thread in the application. It toggles the state of a digital output connected to an LED on the board.
+1. **Install Mbed OS**:
+   Ensure you have the **Mbed OS** installed on your machine. You can follow the [official installation guide](https://os.mbed.com/studio/) to set up the necessary tools.
 
-**Note**: This example requires a target with RTOS support, i.e. one with `rtos` declared in `supported_application_profiles` in `targets/targets.json` in [mbed-os](https://github.com/ARMmbed/mbed-os). For non-RTOS targets (usually with small memory sizes), please use [mbed-os-example-blinky-baremetal](https://github.com/ARMmbed/mbed-os-example-blinky-baremetal) instead.
+2. **Import the Project**:
+   Clone the repository or download the project files. Open a terminal and navigate to your project directory.
 
-## Building and running
+3. **Build the Project**:
+   To build and flash the project onto your **STM32 Nucleo F401RE** board, follow these steps:
+   - Connect your **Nucleo F401RE** board via USB to your computer.
+   - Open a terminal and run the following command to build the project:
 
-1. Connect a USB cable between the USB port on the board and the host computer.
-1. Run the following command to build the example project and program the microcontroller flash memory:
+   ```bash
+   mbed compile -m NUCLEO_F401RE -t GCC_ARM --flash
 
-    * Mbed CLI 2
+# Embedded_Project: Real-Time Clock and Voltage Display
 
-    ```bash
-    $ mbed-tools compile -m <TARGET> -t <TOOLCHAIN> --flash
-    ```
+This project uses the **STM32 Nucleo F401RE** board along with the **Arduino Multifunction Shield** to display a **real-time clock** (RTC) and **voltage readings** on a **4-digit 7-segment display**. The voltage is read through a **potentiometer** and displayed when the **S3 switch** is pressed. The program continuously counts time in the background.
 
-    * Mbed CLI 1
+## Features:
+- **Real-Time Clock** displayed on a 4-digit 7-segment display.
+- **Voltage** display from a potentiometer when **S3** is pressed.
+- **Reset** functionality when **S1** is pressed, or when the time reaches 100 minutes.
 
-    ```bash
-    $ mbed compile -m <TARGET> -t <TOOLCHAIN> --flash
-    ```
+## Components:
+- **STM32 Nucleo F401RE** board
+- **Arduino Multifunction Shield**
+  - **4-digit 7-segment display**
+  - **Potentiometer**
+  - **3 switches (S1, S2, S3)**
 
-Your PC may take a few minutes to compile your code.
+## Pin Setup:
+- **Shift Register Pins** for controlling the 7-segment display:
+  - `DigitalOut serPin(D8)`  - Serial Data
+  - `DigitalOut clkPin(D7)`  - Clock
+  - `DigitalOut latchPin(D4)` - Latch
+- **Inputs:**
+  - `AnalogIn voltagePin(A0)`  - Potentiometer
+  - `DigitalIn s1Switch(A1)`   - Reset
+  - `DigitalIn s3Switch(A3)`   - Show Voltage
 
-The binary is located at:
-* **Mbed CLI 2** - `./cmake_build/<TARGET>/develop/<TOOLCHAIN>/mbed-os-example-blinky.bin`
-* **Mbed CLI 1** - `./BUILD/<TARGET>/<TOOLCHAIN>/mbed-os-example-blinky.bin`
+## Application Functionality:
+The program runs in a **single-threaded** loop, with the **real-time clock** being updated every second. When the **S3 switch** is pressed, it will display the voltage read from the potentiometer. When **S1** is pressed or after **100 minutes**, the timer resets to `00:00`.
 
-Alternatively, you can manually copy the binary to the board, which you mount on the host computer over USB.
+## Build Instructions:
 
-## Expected output
-The LED on your target turns on and off every 500 milliseconds.
+1. **Install Mbed OS**:
+   Ensure you have the **Mbed OS** installed on your machine. You can follow the [official installation guide](https://os.mbed.com/studio/) to set up the necessary tools.
 
+2. **Import the Project**:
+   Clone the repository or download the project files. Open a terminal and navigate to your project directory.
 
-## Troubleshooting
-If you have problems, you can review the [documentation](https://os.mbed.com/docs/latest/tutorials/debugging.html) for suggestions on what could be wrong and how to fix it.
+3. **Build the Project**:
+   To build and flash the project onto your **STM32 Nucleo F401RE** board, follow these steps:
+   - Connect your **Nucleo F401RE** board via USB to your computer.
+   - Open a terminal and run the following command to build the project:
 
-## Related Links
+   ```bash
+   mbed compile -m NUCLEO_F401RE -t GCC_ARM --flash
 
-* [Mbed OS Stats API](https://os.mbed.com/docs/latest/apis/mbed-statistics.html).
-* [Mbed OS Configuration](https://os.mbed.com/docs/latest/reference/configuration.html).
-* [Mbed OS Serial Communication](https://os.mbed.com/docs/latest/tutorials/serial-communication.html).
-* [Mbed OS bare metal](https://os.mbed.com/docs/mbed-os/latest/reference/mbed-os-bare-metal.html).
-* [Mbed boards](https://os.mbed.com/platforms/).
+## 📹 Project Video
 
-### License and contributions
+[![Watch the video](https://github.com/Mazen-Elborhamy/Embedded-Project-/raw/main/Report%20%26%20Video/Screenshot%202025-05-12%20150740.png)](https://github.com/Mazen-Elborhamy/Embedded-Project-/blob/main/Report%20%26%20Video/Project%20Video.mp4)
 
-The software is provided under Apache-2.0 license. Contributions to this project are accepted under the same license. Please see [CONTRIBUTING.md](./CONTRIBUTING.md) for more info.
-
-This project contains code from other projects. The original license text is included in those source files. They must comply with our license guide.
