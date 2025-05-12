@@ -3,20 +3,23 @@
 </p>
 <br clear="all"/>
 
-<table style="width: 100%; text-align: center; border: 1px solid black;">
+
+<table style="width: 100%; text-align: center; border-collapse: collapse;">
   <tr>
-    <th>Name</th>
-    <th>ID</th>
+    <th style="border: 2px solid black; padding: 10px;">Name</th>
+    <th style="border: 2px solid black; padding: 10px;">ID</th>
   </tr>
   <tr>
-    <td>Mazen Ashraf Mohamed</td>
-    <td>2200822</td>
+    <td style="border: 2px solid black; padding: 10px;">Mazen Ashraf Mohamed</td>
+    <td style="border: 2px solid black; padding: 10px;">2200822</td>
   </tr>
   <tr>
-    <td>Yasser Mohamed Abdallah</td>
-    <td>2200732</td>
+    <td style="border: 2px solid black; padding: 10px;">Yasser Mohamed Abdallah</td>
+    <td style="border: 2px solid black; padding: 10px;">2200732</td>
   </tr>
 </table>
+
+
 
 
 # Embedded Project: Real-Time Clock and Voltage Display
