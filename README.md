@@ -3,9 +3,10 @@
 </p>
 <br clear="all"/>
 
-# Embedded_Project: Real-Time Clock and Voltage Display
+# Embedded Project: Real-Time Clock and Voltage Display
 
 This project uses the **STM32 Nucleo F401RE** board along with the **Arduino Multifunction Shield** to display a **real-time clock** (RTC) and **voltage readings** on a **4-digit 7-segment display**. The voltage is read through a **potentiometer** and displayed when the **S3 switch** is pressed. The program continuously counts time in the background.
+
 
 ## Features:
 - **Real-Time Clock** displayed on a 4-digit 7-segment display.
